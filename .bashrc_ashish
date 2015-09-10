@@ -1,0 +1,18 @@
+alias ll="ls -la"
+
+shopt -s histappend
+shopt -s cmdhist
+
+HISTFILESIZE=1000000
+HISTSIZE=1000000
+HISTCONTROL=ignoreboth
+HISTIGNORE='ls:bg:fg:history'
+HISTTIMEFORMAT='%F %T '
+
+
+. ~/.git-prompt.sh
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWCOLORHINTS=1
+#export PS1='[\u \W$(__git_ps1 " (%s)")]\$ '
+export PROMPT_COMMAND='__git_ps1 "\w" "\\\$ "'
